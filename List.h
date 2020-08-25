@@ -16,8 +16,8 @@ public:
     List();
     ~List();
 
-    void build(int value);
-    void display();
+    void build_linear_linked_list(int value);
+    void display_all();
 
 private:
     node * head;
