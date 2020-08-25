@@ -23,7 +23,7 @@ List::~List() {
     delete tail;
 }
 
-void List::build(int value) {
+void List::build_linear_linked_list(int value) {
     node * temp = new node;
     temp->data = value;
     temp->next = nullptr;
@@ -38,12 +38,11 @@ void List::build(int value) {
     }
 }
 
-void List::display() {
+void List::display_all() {
     node * curr = new node;
     curr = head;
 
     while(curr != nullptr)
-//    if(curr != nullptr)
     {
         std::cout << curr->data << std::endl;
         curr = curr->next;
