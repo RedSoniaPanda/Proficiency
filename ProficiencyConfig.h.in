@@ -1,0 +1,3 @@
+// The configured options and settings for Proficiency
+#define Proficiency_VERSION_MAJOR @Proficiency_VERSION_MAJOR@
+#define Proficiency_VERSION_MINOR @Proficiency_VERSION_MINOR@
