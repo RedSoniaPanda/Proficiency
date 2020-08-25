@@ -2,6 +2,8 @@
 #include <ProficiencyConfig.h>
 #include "List.h"
 
+List build_list();
+
 int main(int argc, char *argv[]) {
     std::cout << "Hello, World!" << std::endl;
 
@@ -10,6 +12,18 @@ int main(int argc, char *argv[]) {
         << "." << Proficiency_VERSION_MINOR << std::endl;
     }
 
+    List linear_linked_list = build_list();
+
+    linear_linked_list.build_linear_linked_list(0);
+    linear_linked_list.build_linear_linked_list(1000);
+
+    linear_linked_list.display_all();
+    linear_linked_list.display_not_equal_head_data();
+
+    return 0;
+}
+
+List build_list() {
     List linear_linked_list;
     int size = 5;
     int value = 0;
@@ -19,11 +33,5 @@ int main(int argc, char *argv[]) {
         ++value;
     }
 
-    linear_linked_list.build_linear_linked_list(0);
-    linear_linked_list.build_linear_linked_list(1000);
-
-    linear_linked_list.display_all();
-    linear_linked_list.display_not_equal_head();
-
-    return 0;
+    return linear_linked_list;
 }
