@@ -5,6 +5,8 @@
 #include "List.h"
 #include <iostream>
 
+using namespace std;
+
 List::List() {
     head = nullptr;
     tail = nullptr;
@@ -27,6 +29,7 @@ void List::build_linear_linked_list(int value) {
     node * temp = new node;
     temp->data = value;
     temp->next = nullptr;
+
     if (head == nullptr) {
         head = temp;
         tail = temp;
@@ -42,11 +45,29 @@ void List::display_all() {
     node * curr = new node;
     curr = head;
 
+    cout << "Display all in list ";
     while(curr != nullptr)
     {
-        std::cout << curr->data << std::endl;
+        cout << curr->data << " ";
         curr = curr->next;
     }
+    
+    cout << endl;
 
     delete curr;
+}
+
+// Iterative version
+void List::display_all_but_first() {
+    int data_of_first = head->data;
+    node * curr = new node;
+
+    curr = head->next;
+    cout << "Display data that doesn't match head's ";
+    while (curr != nullptr) {
+        if (curr->data != data_of_first) {
+            cout << curr->data << " ";
+        }
+        curr = curr->next;
+    }
 }
