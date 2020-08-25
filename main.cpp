@@ -19,7 +19,11 @@ int main(int argc, char *argv[]) {
         ++value;
     }
 
+    linear_linked_list.build_linear_linked_list(0);
+    linear_linked_list.build_linear_linked_list(1000);
+
     linear_linked_list.display_all();
+    linear_linked_list.display_all_but_first();
 
     return 0;
 }
