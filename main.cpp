@@ -13,11 +13,16 @@ int main(int argc, char *argv[]) {
     }
 
     List linear_linked_list = build_list();
+    int sum;
 
     linear_linked_list.build_linear_linked_list(0);
-    linear_linked_list.build_linear_linked_list(1000);
-
     linear_linked_list.display_all();
+    linear_linked_list.display_not_equal_head_data();
+
+    sum = linear_linked_list.sum_larger_than_tail();
+    std::cout << "Returned sum is " << sum << std::endl;
+
+    linear_linked_list.build_linear_linked_list(1000);
     linear_linked_list.display_not_equal_head_data();
 
     return 0;

@@ -70,4 +70,24 @@ void List::display_not_equal_head_data() {
         }
         curr = curr->next;
     }
+    cout << endl;
+}
+
+int List::sum_larger_than_tail() {
+    int data_of_tail = tail->data;
+    node * curr = new node;
+    int sum = 0;
+
+    curr = head;
+    cout << "Sum of data larger than tail's" << endl;
+
+    while (curr != tail) {
+        if (curr->data > tail->data)
+        {
+            sum += curr->data;
+        }
+        curr = curr->next;
+    }
+
+    return sum;
 }
