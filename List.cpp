@@ -25,7 +25,7 @@ List::~List() {
     delete tail;
 }
 
-void List::build_linear_linked_list(int value) {
+void List::insert_at_end_of_lll(int value) {
     node * temp = new node;
     temp->data = value;
     temp->next = nullptr;
@@ -43,51 +43,35 @@ void List::build_linear_linked_list(int value) {
 
 void List::display_all() {
     node * curr = new node;
-    curr = head;
 
     cout << "Display all in list ";
-    while(curr != nullptr)
-    {
+    for (curr = head; curr != nullptr; curr = curr->next)
         cout << curr->data << " ";
-        curr = curr->next;
-    }
-    
-    cout << endl;
 
+    cout << endl;
     delete curr;
 }
 
-// Iterative version
-void List::display_not_equal_head_data() {
-    int data_of_first = head->data;
+// Iterative versions
+void List::display_not_equal_head() {
     node * curr = new node;
 
-    curr = head->next;
     cout << "Display data that doesn't match head's ";
-    while (curr != nullptr) {
-        if (curr->data != data_of_first) {
+    for (curr = head->next; curr != nullptr; curr = curr->next)
+        if (curr->data != head->data)
             cout << curr->data << " ";
-        }
-        curr = curr->next;
-    }
+
     cout << endl;
+    delete curr;
 }
 
 int List::sum_larger_than_tail() {
-    int data_of_tail = tail->data;
     node * curr = new node;
     int sum = 0;
 
-    curr = head;
-    cout << "Sum of data larger than tail's" << endl;
-
-    while (curr != tail) {
+    for (curr = head; curr != tail; curr = curr->next)
         if (curr->data > tail->data)
-        {
-            sum += curr->data;
-        }
-        curr = curr->next;
-    }
+        sum += curr->data;
 
     return sum;
 }

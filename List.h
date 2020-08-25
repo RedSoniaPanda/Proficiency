@@ -16,8 +16,8 @@ public:
     List();
     ~List();
 
-    void build_linear_linked_list(int value);
-    void display_not_equal_head_data();
+    void insert_at_end_of_lll(int value);
+    void display_not_equal_head();
     void display_all();
 
     int sum_larger_than_tail();
