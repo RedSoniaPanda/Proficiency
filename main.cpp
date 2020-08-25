@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
     linear_linked_list.build_linear_linked_list(1000);
 
     linear_linked_list.display_all();
-    linear_linked_list.display_all_but_first();
+    linear_linked_list.display_not_equal_head();
 
     return 0;
 }

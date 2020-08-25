@@ -58,7 +58,7 @@ void List::display_all() {
 }
 
 // Iterative version
-void List::display_all_but_first() {
+void List::display_not_equal_head() {
     int data_of_first = head->data;
     node * curr = new node;
 
