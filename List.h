@@ -22,6 +22,8 @@ public:
 
     int sum_larger_than_tail();
 
+    bool is_last_two_found_more_than_once();
+
 private:
     node * head;
     node * tail;

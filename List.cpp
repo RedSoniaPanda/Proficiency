@@ -75,3 +75,32 @@ int List::sum_larger_than_tail() {
 
     return sum;
 }
+
+bool List::is_last_two_found_more_than_once() {
+    node * curr = new node;
+    node * one_before_tail = new node;
+    int tail_data = tail->data;
+    int one_before_tail_data = 0;
+    int count_times = 0;
+
+    for(curr = head; curr->next != tail; curr = curr->next) {
+        if (curr->data == tail_data) {
+            ++count_times;
+        }
+    }
+
+    if (curr->data == tail_data) {
+        ++count_times;
+    }
+    one_before_tail_data = curr->data;
+    cout << "One before tail data " << one_before_tail_data << endl;
+    one_before_tail = curr;
+
+    for(curr = head; curr->next != one_before_tail; curr = curr->next) {
+        if (curr->data == one_before_tail_data) {
+            ++count_times;
+        }
+    }
+
+    return count_times > 0;
+}
