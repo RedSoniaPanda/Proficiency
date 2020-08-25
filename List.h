@@ -17,6 +17,7 @@ public:
     ~List();
 
     void build_linear_linked_list(int value);
+    void display_all_but_first();
     void display_all();
 
 private:
