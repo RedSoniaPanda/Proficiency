@@ -1,2 +1,2 @@
 # Proficiency
-This demonstrates the proficiency work that I went through to be admitted to PSU's Computer Science program.
+This demonstrates the proficiency work completed for admittance to PSU's Computer Science program.

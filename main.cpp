@@ -10,7 +10,14 @@ int main(int argc, char *argv[]) {
     }
 
     List linear_linked_list;
-    linear_linked_list.build(0);
+    int size = 5;
+    int value = 0;
+
+    for (int i = 0; i < size; ++i) {
+        linear_linked_list.build(value);
+        ++value;
+    }
+
     linear_linked_list.display();
     std::cout << "end " << std::endl;
 

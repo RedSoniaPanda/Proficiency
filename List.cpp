@@ -36,8 +36,6 @@ void List::build(int value) {
         tail->next = temp;
         tail = temp;
     }
-
-    delete temp;
 }
 
 void List::display() {
