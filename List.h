@@ -20,6 +20,8 @@ public:
     void display_not_equal_head_data();
     void display_all();
 
+    int sum_larger_than_tail();
+
 private:
     node * head;
     node * tail;
