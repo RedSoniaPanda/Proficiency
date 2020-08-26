@@ -21,8 +21,10 @@ public:
     void display_all();
 
     int get_sum_larger_than_tail();
-
     bool did_find_more_than_once();
+    bool remove_given_value(int value);
+    bool remove_given_value(int value, node *& curr, node *& prev);
+
 
 private:
     node * head;

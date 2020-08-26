@@ -75,7 +75,7 @@ int List::get_sum_larger_than_tail() {
 
     for (curr = head; curr != tail; curr = curr->next)
         if (curr->data > tail->data)
-        sum += curr->data;
+            sum += curr->data;
 
     return sum;
 }
@@ -111,4 +111,47 @@ bool List::did_find_more_than_once() {
     }
 
     return count_times > 0;
+}
+
+// Recursion Begin
+
+bool List::remove_given_value(int value) {
+    if (!head)
+        return false;
+
+    node * prev = nullptr;
+    return this->remove_given_value(value, head, prev);
+}
+
+bool List::remove_given_value(int value, node *&curr, node *&prev) {
+    bool was_removed = false;
+
+    if (!curr) {
+        return was_removed;
+    }
+
+    if (curr->data == value) {
+        if (curr == head) {
+            node * temp = curr;
+            head = temp->next;
+            curr = head;
+            was_removed = true;
+            return remove_given_value(value, curr, prev) + was_removed;
+        }
+        if (curr == tail) {
+            prev->next = nullptr;
+            tail = prev;
+            was_removed = true;
+            return was_removed;
+        }
+
+        node * temp = curr;
+        prev->next = temp->next;
+        curr = prev->next;
+        was_removed = true;
+        return remove_given_value(value, curr, prev);
+    }
+
+    prev = curr;
+    return remove_given_value(value, curr->next, prev);
 }
