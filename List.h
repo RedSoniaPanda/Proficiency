@@ -20,9 +20,9 @@ public:
     void display_not_equal_head();
     void display_all();
 
-    int sum_larger_than_tail();
+    int get_sum_larger_than_tail();
 
-    bool is_last_two_found_more_than_once();
+    bool did_find_more_than_once();
 
 private:
     node * head;
