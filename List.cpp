@@ -43,8 +43,6 @@ void List::insert_at_end_of_lll(int value) {
         tail->next = temp;
         tail = temp;
     }
-
-//    display_all();
 }
 
 void List::display_all() {
@@ -71,7 +69,7 @@ void List::display_not_equal_head() {
     delete curr;
 }
 
-int List::sum_larger_than_tail() {
+int List::get_sum_larger_than_tail() {
     node * curr = new node;
     int sum = 0;
 
@@ -82,7 +80,7 @@ int List::sum_larger_than_tail() {
     return sum;
 }
 
-bool List::is_last_two_found_more_than_once() {
+bool List::did_find_more_than_once() {
     if (head == nullptr) {
         return false;
     }
