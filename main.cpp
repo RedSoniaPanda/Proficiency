@@ -4,7 +4,7 @@
 
 using namespace std;
 
-List build_list();
+void build_list(List &linear_linked_list);
 void display_proficiency_version(int argc, char *const *argv);
 
 
@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     bool is_found = false;
     int sum;
 
-    List linear_linked_list;
+    List linear_linked_list{};
     is_found = linear_linked_list.is_last_two_found_more_than_once();
     if (is_found) {
         cout << "Found last two data points more than once" << endl;
@@ -24,8 +24,8 @@ int main(int argc, char *argv[]) {
         cout << "Didn't find last two data points more than once" << endl;
     }
 
-    linear_linked_list = build_list();
-
+    build_list(linear_linked_list);
+    linear_linked_list.display_all();
     
     is_found = linear_linked_list.is_last_two_found_more_than_once();
     if (is_found) {
@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
         cout << "Didn't find last two data points more than once" << endl;
     }
 
-    
+    cout << "Inserting at end of LLL " << endl;
     linear_linked_list.insert_at_end_of_lll(2);
     linear_linked_list.insert_at_end_of_lll(2);
     linear_linked_list.insert_at_end_of_lll(2);
@@ -72,8 +72,8 @@ void display_proficiency_version(int argc, char *const *argv) {
     }
 }
 
-List build_list() {
-    List linear_linked_list;
+void build_list(List &linear_linked_list) {
+
     int size = 5;
     int value = 0;
 
@@ -83,5 +83,4 @@ List build_list() {
     }
 
     linear_linked_list.display_all();
-    return linear_linked_list;
 }

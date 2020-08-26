@@ -32,13 +32,19 @@ void List::insert_at_end_of_lll(int value) {
 
     if (head == nullptr) {
         head = temp;
-        tail = temp;
+        head->next = tail;
         temp = nullptr;
+    }
+    else if (tail == nullptr) {
+        tail = temp;
+        head->next = tail;
     }
     else {
         tail->next = temp;
         tail = temp;
     }
+
+//    display_all();
 }
 
 void List::display_all() {
