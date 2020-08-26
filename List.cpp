@@ -77,6 +77,10 @@ int List::sum_larger_than_tail() {
 }
 
 bool List::is_last_two_found_more_than_once() {
+    if (head == nullptr) {
+        return false;
+    }
+
     node * curr = new node;
     node * one_before_tail = new node;
     int tail_data = tail->data;
