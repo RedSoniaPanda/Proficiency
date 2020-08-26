@@ -13,6 +13,7 @@ int main(int argc, char *argv[]) {
     display_proficiency_version(argc, argv);
 
     bool is_found = false;
+    int sum;
 
     List linear_linked_list;
     is_found = linear_linked_list.is_last_two_found_more_than_once();
@@ -25,10 +26,19 @@ int main(int argc, char *argv[]) {
 
     linear_linked_list = build_list();
 
-    int sum;
-//    linear_linked_list.insert_at_end_of_lll(2);
-//    linear_linked_list.insert_at_end_of_lll(2);
-//    linear_linked_list.insert_at_end_of_lll(2);
+    
+    is_found = linear_linked_list.is_last_two_found_more_than_once();
+    if (is_found) {
+        cout << "Found last two data points more than once" << endl;
+    }
+    else {
+        cout << "Didn't find last two data points more than once" << endl;
+    }
+
+    
+    linear_linked_list.insert_at_end_of_lll(2);
+    linear_linked_list.insert_at_end_of_lll(2);
+    linear_linked_list.insert_at_end_of_lll(2);
 
     is_found = linear_linked_list.is_last_two_found_more_than_once();
     if (is_found) {
