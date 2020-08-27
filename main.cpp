@@ -41,6 +41,7 @@ int main(int argc, char *argv[]) {
     test_remove_given_value(2, linear_linked_list);
     test_remove_given_value(1, linear_linked_list);
     test_remove_given_value(3, linear_linked_list);
+    test_remove_given_value(4, linear_linked_list);
 
     return 0;
 }
@@ -118,9 +119,7 @@ void test_build_list(List &linear_linked_list) {
 
 void test_remove_given_value(int value, List &linear_linked_list) {
     bool did_remove = false;
-    linear_linked_list.display_all();
     did_remove = linear_linked_list.remove_given_value(value);
-
 
     if (did_remove) {
         cout << "Found and removed value " << value << " from list." << endl;
