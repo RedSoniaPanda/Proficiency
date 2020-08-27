@@ -16,6 +16,7 @@ void test_can_find_more_than_once(bool is_found, List &linear_linked_list);
 void test_display_all(List &linear_linked_list);
 void test_display_all_not_equal_to_head(List &linear_linked_list);
 void test_sum_all_larger_than_tail(int sum, List &linear_linked_list);
+void test_remove_given_value(int value, List &linear_linked_list);
 
 int main(int argc, char *argv[]) {
     display_proficiency_version(argc, argv);
@@ -34,6 +35,13 @@ int main(int argc, char *argv[]) {
     test_can_find_more_than_once(is_found, linear_linked_list);
     test_display_all_not_equal_to_head(linear_linked_list);
     test_sum_all_larger_than_tail(sum, linear_linked_list);
+
+    test_remove_given_value(1000, linear_linked_list);
+    test_remove_given_value(0, linear_linked_list);
+    test_remove_given_value(2, linear_linked_list);
+    test_remove_given_value(1, linear_linked_list);
+    test_remove_given_value(3, linear_linked_list);
+    test_remove_given_value(4, linear_linked_list);
 
     return 0;
 }
@@ -107,4 +115,17 @@ void test_build_list(List &linear_linked_list) {
     }
 
     linear_linked_list.display_all();
+}
+
+void test_remove_given_value(int value, List &linear_linked_list) {
+    bool did_remove = false;
+    did_remove = linear_linked_list.remove_given_value(value);
+
+    if (did_remove) {
+        cout << "Found and removed value " << value << " from list." << endl;
+        linear_linked_list.display_all();
+    }
+    else {
+        cout << "Did not find and remove value " << value << " from list." << endl;
+    }
 }
