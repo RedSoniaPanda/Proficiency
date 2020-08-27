@@ -17,7 +17,7 @@ public:
     ~List();
 
     void insert_at_end_of_lll(int value);
-    void display_not_equal_head();
+    bool display_not_equal_head();
     void display_all();
 
     int get_sum_larger_than_tail();
