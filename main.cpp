@@ -47,31 +47,39 @@ int main(int argc, char *argv[]) {
 
 void test_no_sum_none_larger_than_tail(int sum, List &linear_linked_list) {
     sum = linear_linked_list.get_sum_larger_than_tail();
-    if (sum > 0)
-        cout << "ERROR: Data that's larger than tail was summed" << endl;
-    else
-        cout << "SUCCESS: Data in list wasn't higher than tail's" << endl;
-    cout << "Returned sum is " << sum << "\n" << endl;
+    if (sum > 0) {
+        cout << "Returned sum is " << sum << endl;
+        cout << "ERROR: Data that's larger than tail was summed\n" << endl;
+    }
+    else {
+        cout << "Returned sum is " << sum << endl;
+        cout << "SUCCESS: Data in list wasn't higher than tail's\n" << endl;
+    }
 }
 
 void test_sum_larger_than_tail(int sum, List &linear_linked_list) {
     sum = linear_linked_list.get_sum_larger_than_tail();
-    if (sum > 0)
-        cout << "SUCCESS: Data that's larger than tail was summed" << endl;
-    else
-        cout << "ERROR: Data in list wasn't higher than tail's" << endl;
-    cout << "Returned sum is " << sum << "\n" << endl;
+    if (sum > 0) {
+        cout << "Returned sum is " << sum << endl;
+        cout << "SUCCESS: Data that's larger than tail was summed\n" << endl;
+    }
+    else {
+        cout << "Returned sum is " << sum << endl;
+        cout << "ERROR: Data in list wasn't higher than tail's\n" << endl;
+    }
 }
 
 void test_display_all_not_equal_to_head(List &linear_linked_list) {
     bool was_displayed = false;
 
     linear_linked_list.insert_at_end_of_lll(0);
+    linear_linked_list.display_all();
     was_displayed = linear_linked_list.display_not_equal_head();
     if (was_displayed)
         cout << "SUCCESS: Data that doesn't match head was displayed\n" << endl;
 
     linear_linked_list.insert_at_end_of_lll(1000);
+    linear_linked_list.display_all();
     was_displayed = linear_linked_list.display_not_equal_head();
     if (was_displayed)
         cout << "SUCCESS: Data that doesn't match head was displayed\n" << endl;
