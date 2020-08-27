@@ -57,16 +57,19 @@ void List::display_all() {
 }
 
 // Iterative versions
-void List::display_not_equal_head() {
+bool List::display_not_equal_head() {
     node * curr = new node;
+    bool was_displayed = false;
 
     cout << "Display data that doesn't match head's ";
     for (curr = head->next; curr != nullptr; curr = curr->next)
         if (curr->data != head->data)
             cout << curr->data << " ";
+            was_displayed = true;
 
     cout << endl;
     delete curr;
+    return was_displayed;
 }
 
 int List::get_sum_larger_than_tail() {
@@ -101,7 +104,6 @@ bool List::did_find_more_than_once() {
         ++count_times;
     }
     one_before_tail_data = curr->data;
-    cout << "One before tail data " << one_before_tail_data << endl;
     one_before_tail = curr;
 
     for(curr = head; curr->next != one_before_tail; curr = curr->next) {
@@ -113,7 +115,7 @@ bool List::did_find_more_than_once() {
     return count_times > 0;
 }
 
-// Recursion Begin
+// Recursive versions
 
 bool List::remove_given_value(int value) {
     if (!head)
