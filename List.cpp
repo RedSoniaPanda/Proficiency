@@ -149,9 +149,9 @@ bool List::remove_given_value(int value, node *&curr, node *&prev) {
         prev->next = temp->next;
         curr = prev->next;
         was_removed = true;
-        return remove_given_value(value, curr, prev);
+        return remove_given_value(value, curr, prev) + was_removed;
     }
 
     prev = curr;
-    return remove_given_value(value, curr->next, prev);
+    return remove_given_value(value, curr->next, prev) + was_removed;
 }
