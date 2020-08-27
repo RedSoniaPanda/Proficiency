@@ -42,12 +42,6 @@ int main(int argc, char *argv[]) {
     test_remove_given_value(1000, linear_linked_list);
     test_sum_larger_than_tail(sum, linear_linked_list);
 
-    test_remove_given_value(0, linear_linked_list);
-    test_remove_given_value(2, linear_linked_list);
-    test_remove_given_value(1, linear_linked_list);
-    test_remove_given_value(3, linear_linked_list);
-    test_remove_given_value(4, linear_linked_list);
-
     return 0;
 }
 
