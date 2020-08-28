@@ -75,3 +75,15 @@ TEST_F(TestList, TestDidntFindLastTwoPointsMoreThanOnce) {
     new_linear_linked_list.insert_at_end_of_lll(10);
     EXPECT_FALSE(new_linear_linked_list.did_find_more_than_once());
 }
+
+TEST_F(TestList, TestSumWithNoneLargerThanTail) {
+    new_linear_linked_list.insert_at_end_of_lll(2);
+    new_linear_linked_list.insert_at_end_of_lll(2);
+    EXPECT_EQ(new_linear_linked_list.get_sum_larger_than_tail(), 0);
+}
+
+TEST_F(TestList, TestSumWithLargerThanTail) {
+    new_linear_linked_list.insert_at_end_of_lll(2);
+    new_linear_linked_list.insert_at_end_of_lll(1);
+    EXPECT_EQ(new_linear_linked_list.get_sum_larger_than_tail(), 2);
+}
