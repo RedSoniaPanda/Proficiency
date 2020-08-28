@@ -1,7 +1,3 @@
-//
-// Created by sophi on 8/27/2020.
-//
-
 #include "gtest/gtest.h"
 #include "../List.h"
 

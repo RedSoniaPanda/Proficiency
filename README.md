@@ -4,3 +4,5 @@ This demonstrates the proficiency work completed for admittance to PSU's Compute
 *Key*
 
 ***LLL == Linear Linked List***
+
+***CLL == Circular Linked List***

@@ -1,7 +1,3 @@
-//
-// Created by sophi on 8/25/2020.
-//
-
 #include "List.h"
 #include <iostream>
 
