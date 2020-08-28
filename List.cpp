@@ -115,6 +115,20 @@ bool List::did_find_more_than_once() {
     return count_times > 0;
 }
 
+bool List::was_insert_successful(int value) {
+    if (!head)
+        return false;
+
+    if (!tail)
+        if (head->data == value)
+            return true;
+
+    if (tail->data == value)
+        return true;
+
+    return false;
+}
+
 // Recursive versions
 
 bool List::remove_given_value(int value) {
@@ -156,17 +170,4 @@ bool List::remove_given_value(int value, node *&curr, node *&prev) {
 
     prev = curr;
     return remove_given_value(value, curr->next, prev) + was_removed;
-}
-
-bool List::was_insert_successful(int value) {
-    if (!head)
-        return false;
-    if (!tail)
-        if (head->data == value)
-            return true;
-
-    if (tail->data == value)
-        return true;
-
-    return false;
 }
