@@ -8,7 +8,16 @@ struct Node {
 
 class CLL {
 public:
-    CLL() = default;
+    CLL();
+    ~CLL();
+
+    bool insert(int value);
+    int display_all();
+
+private:
+    Node * head;
+    Node * tail;
+
 };
 
 #endif //CIRCULARLIST
