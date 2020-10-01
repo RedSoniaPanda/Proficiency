@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ProficiencyConfig.h>
 #include "List.h"
+#include "CircularList.h"
 
 using namespace std;
 
@@ -14,8 +15,16 @@ int main(int argc, char *argv[]) {
     // Test Environment
     hello_world();
 
+    // Building LLL
     List linear_linked_list{};
     build_list(linear_linked_list);
+
+    // Building CLL
+    CLL circular_linked_list{};
+    int number_of_items = 0;
+
+    number_of_items = circular_linked_list.display_all();
+    cout << "Number of items in CLL " << number_of_items << endl;
 
     return 0;
 }
