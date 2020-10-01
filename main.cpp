@@ -1,30 +1,24 @@
 #include <iostream>
 #include <ProficiencyConfig.h>
-#include "List.h"
-#include "CircularList.h"
+#include "LinearLinkedLists/List.h"
+#include "CircularLinkedLists/CircularList.h"
 
 using namespace std;
 
 void display_proficiency_version(int argc, char *const *argv);
-void build_list(List &linear_linked_list);
-void hello_world() { cout << "Hello, World SUCCESS!\n" << endl; }
+void hello_world_test_environment() { cout << "Hello, World SUCCESS!\n" << endl; }
+void build_linear_linked_list(List &linear_linked_list);
+void build_empty_circular_linked_list();
 
 int main(int argc, char *argv[]) {
     display_proficiency_version(argc, argv);
+    hello_world_test_environment();
 
-    // Test Environment
-    hello_world();
-
-    // Building LLL
     List linear_linked_list{};
-    build_list(linear_linked_list);
+    build_linear_linked_list(linear_linked_list);
+    linear_linked_list.display_all();
 
-    // Building CLL
-    CLL circular_linked_list{};
-    int number_of_items = 0;
-
-    number_of_items = circular_linked_list.display_all();
-    cout << "Number of items in CLL " << number_of_items << endl;
+    build_empty_circular_linked_list();
 
     return 0;
 }
@@ -35,7 +29,7 @@ void display_proficiency_version(int argc, char *const *argv) {
              << "." << Proficiency_VERSION_MINOR << endl;
 }
 
-void build_list(List &linear_linked_list) {
+void build_linear_linked_list(List &linear_linked_list) {
     int size = 5;
     int value = 0;
 
@@ -43,6 +37,10 @@ void build_list(List &linear_linked_list) {
         linear_linked_list.insert_at_end_of_lll(value);
         ++value;
     }
+}
 
-    linear_linked_list.display_all();
+void build_empty_circular_linked_list() {// Test empty CLL set up in main
+    CLL circular_linked_list{};
+    int number_of_items = circular_linked_list.display_all();
+    cout << "Number of items in CLL " << number_of_items << endl;
 }
